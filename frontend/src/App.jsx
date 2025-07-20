@@ -4,6 +4,7 @@ import Hero from "./components/Hero";
 import FeaturedSection from "./components/FeaturedSection";
 import FeaturedSection2 from "./components/FeaturedSection2";
 import Login from "./components/Login";
+import Prac from "./components/Prac";
 
 const App = () => {
   const [showLogin, setShowLogin] = useState(false);
@@ -16,6 +17,7 @@ const App = () => {
       <Hero />
       <FeaturedSection />
       <FeaturedSection2 />
+      <Prac />
     </>
   );
 };

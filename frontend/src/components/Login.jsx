@@ -3,7 +3,7 @@ import React from "react";
 
 const Login = ({ onclose }) => {
   return (
-    <div className="absolute w-full h-screen sm:w-[400px] top-0 right-0  ">
+    <div className="absolute w-full h-screen sm:w-[400px] top-0 right-0   ">
       <form action="" className="w-full px-4 md:px-8 py-6 bg-white h-full ">
         <div className="flex justify-between items-center  mb-6">
           <h1 className="text-lg font-semibold text-gray-800">Login</h1>
