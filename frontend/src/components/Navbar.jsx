@@ -9,49 +9,64 @@ import {
   UserRound,
   X,
 } from "lucide-react";
+import { Link, useNavigate } from "react-router-dom";
 
 const Navbar = ({ onLoginClick }) => {
-  let [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+
+  const navigate = useNavigate();
+
+  const handleUserClick = () => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      // User is logged in
+      navigate("/profile");
+    } else {
+      // Not logged in
+      onLoginClick(); // Open login modal
+    }
+  };
 
   return (
     <div className="py-3 md:py-4">
+      {/* Desktop */}
       <div className="hidden lg:flex justify-between items-center py-2 px-2 sm:px-0">
         <div className="sm:2xl md:text-3xl font-semibold text-gray-700 ml-0 2xl:ml-30">
-          FOREVER 21
+          <Link to="/">FOREVER 21</Link>
         </div>
         <div className="flex px-3 sm:px-12 gap-4 sm:gap-14">
-          <div className=" bg-gray-100 hidden lg:flex items-center px-3">
+          <div className="bg-gray-100 hidden lg:flex items-center px-3">
             <Search strokeWidth={1.5} size={20} />
             <input
               type="Search"
               placeholder="Search"
-              className=" px-4 py-3 outline-none w-4xl"
+              className="px-4 py-3 outline-none w-4xl"
             />
           </div>
           <div className="flex items-center gap-5">
-            <button onClick={onLoginClick}>
+            <button onClick={handleUserClick}>
               <UserRound strokeWidth={1.5} size={20} />
             </button>
-
-            <a href="">
+            <Link to="/wishlist">
               <Heart strokeWidth={1.5} size={20} />
-            </a>
-            <a href="">
+            </Link>
+            <Link to="/cart">
               <ShoppingCart strokeWidth={1.5} size={20} />
-            </a>
+            </Link>
           </div>
         </div>
       </div>
-      <div className="lg:flex gap-20 justify-center py-2 text-gray-800 font-semibold mt-2 border-b border-gray-200 hidden ">
-        <a href="">WOMEN</a>
-        <a href="">PLUS</a>
-        <a href="">MEN</a>
-        <a href="">SHOES</a>
-        <a href="">ACCESSORIES</a>
-        <a href="">SALE</a>
+
+      <div className="lg:flex gap-20 justify-center py-2 text-gray-800 font-semibold mt-2 border-b border-gray-200 hidden">
+        <Link to="/women">WOMEN</Link>
+        <Link to="/plus">PLUS</Link>
+        <Link to="/men">MEN</Link>
+        <Link to="/shoes">SHOES</Link>
+        <Link to="/accessories">ACCESSORIES</Link>
+        <Link to="/sale">SALE</Link>
       </div>
 
-      {/* mobile */}
+      {/* Mobile Topbar */}
       <div className="lg:hidden flex justify-between px-3 mb-4 shadow-sm py-2">
         <div className="flex gap-2">
           <button onClick={() => setIsOpen(true)}>
@@ -59,19 +74,22 @@ const Navbar = ({ onLoginClick }) => {
           </button>
           <Search strokeWidth={1.5} size={28} />
         </div>
-        <h1 className="text-xl font-semibold text-gray-800">FOREVER 21</h1>
+        <h1 className="text-xl font-semibold text-gray-800">
+          <Link to="/">FOREVER 21</Link>
+        </h1>
         <div className="flex gap-2">
-          <button onClick={onLoginClick}>
+          <button onClick={handleUserClick}>
             <UserRound strokeWidth={1.5} size={28} />
           </button>
-
-          <ShoppingBag size={28} strokeWidth={1.5} />
+          <Link to="/cart">
+            <ShoppingBag size={28} strokeWidth={1.5} />
+          </Link>
         </div>
       </div>
 
-      {/* sidebar */}
+      {/* Mobile Sidebar */}
       <div
-        className={`lg:hidden h-screen w-11/12 bg-white absolute top-0 left-0 transform transition-transform duration-300 ${
+        className={`lg:hidden h-screen w-11/12 bg-white absolute top-0 left-0 transform transition-transform duration-300 z-50 ${
           isOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >
@@ -84,27 +102,27 @@ const Navbar = ({ onLoginClick }) => {
           </div>
           <div className="mt-6">
             <div className="py-3 flex justify-between items-center border-b border-gray-300">
-              <a href="">WOMEN</a>
+              <Link to="/women">WOMEN</Link>
               <ChevronRight size={20} strokeWidth={1.5} />
             </div>
             <div className="py-3 flex justify-between items-center border-b border-gray-300">
-              <a href="">PLUS</a>
+              <Link to="/plus">PLUS</Link>
               <ChevronRight size={20} strokeWidth={1.5} />
             </div>
             <div className="py-3 flex justify-between items-center border-b border-gray-300">
-              <a href="">MEN</a>
+              <Link to="/men">MEN</Link>
               <ChevronRight size={20} strokeWidth={1.5} />
             </div>
             <div className="py-3 flex justify-between items-center border-b border-gray-300">
-              <a href="">SHOES</a>
+              <Link to="/shoes">SHOES</Link>
               <ChevronRight size={20} strokeWidth={1.5} />
             </div>
             <div className="py-3 flex justify-between items-center border-b border-gray-300">
-              <a href="">ACCESSORIES</a>
+              <Link to="/accessories">ACCESSORIES</Link>
               <ChevronRight size={20} strokeWidth={1.5} />
             </div>
             <div className="py-3 flex justify-between items-center border-b border-gray-300">
-              <a href="">SALE</a>
+              <Link to="/sale">SALE</Link>
               <ChevronRight size={20} strokeWidth={1.5} />
             </div>
           </div>
