@@ -58,12 +58,12 @@ const Navbar = ({ onLoginClick }) => {
       </div>
 
       <div className="lg:flex gap-20 justify-center py-2 text-gray-800 font-semibold mt-2 border-b border-gray-200 hidden">
-        <Link to="/women">WOMEN</Link>
-        <Link to="/plus">PLUS</Link>
-        <Link to="/men">MEN</Link>
-        <Link to="/shoes">SHOES</Link>
-        <Link to="/accessories">ACCESSORIES</Link>
-        <Link to="/sale">SALE</Link>
+        <Link to="/category/women">WOMEN</Link>
+        <Link to="/category/plus">PLUS</Link>
+        <Link to="/category/men">MEN</Link>
+        <Link to="/category/shoes">SHOES</Link>
+        <Link to="category/accessories">ACCESSORIES</Link>
+        <Link to="/category/sale">SALE</Link>
       </div>
 
       {/* Mobile Topbar */}

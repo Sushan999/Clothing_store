@@ -11,6 +11,8 @@ import Register from "./Pages/Register";
 import Cart from "./Pages/Cart";
 import Profile from "./Pages/Profile";
 import Products from "./Pages/Products";
+import ProductDetail from "./Pages/ProductDetail";
+import Khaiju from "./Pages/Khaiju";
 
 const App = () => {
   const [showLogin, setShowLogin] = useState(false);
@@ -36,7 +38,9 @@ const App = () => {
         <Route path="/register" element={<Register />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/profile" element={<Profile />} />
-        <Route path="/:category" element={<Products />} />
+        <Route path="category/:category" element={<Products />} />
+        <Route path="/product/:id" element={<ProductDetail />} />
+        <Route path="/khaiju" element={<Khaiju />} />
       </Routes>
     </>
   );
