@@ -58,12 +58,12 @@ const Navbar = ({ onLoginClick }) => {
       </div>
 
       <div className="lg:flex gap-20 justify-center py-2 text-gray-800 font-semibold mt-2 border-b border-gray-200 hidden">
-        <Link to="/category/women">WOMEN</Link>
-        <Link to="/category/plus">PLUS</Link>
-        <Link to="/category/men">MEN</Link>
+        <Link to="/category/bags">BAGS</Link>
+        <Link to="/category/pants">PANTS</Link>
+        <Link to="/category/shirts">SHIRTS</Link>
         <Link to="/category/shoes">SHOES</Link>
-        <Link to="category/accessories">ACCESSORIES</Link>
-        <Link to="/category/sale">SALE</Link>
+        <Link to="category/suits">SUITS</Link>
+        <Link to="/category/tracks">TRACKS</Link>
       </div>
 
       {/* Mobile Topbar */}
@@ -95,22 +95,22 @@ const Navbar = ({ onLoginClick }) => {
       >
         <div className="px-6 py-4 text-lg font-semibold text-gray-800">
           <div className="flex justify-between">
-            <span>Menu</span>
+            <span>SHIRTSu</span>
             <button onClick={() => setIsOpen(false)}>
               <X size={20} strokeWidth={1.5} />
             </button>
           </div>
           <div className="mt-6">
             <div className="py-3 flex justify-between items-center border-b border-gray-300">
-              <Link to="/women">WOMEN</Link>
+              <Link to="/BAGS">BAGS</Link>
               <ChevronRight size={20} strokeWidth={1.5} />
             </div>
             <div className="py-3 flex justify-between items-center border-b border-gray-300">
-              <Link to="/plus">PLUS</Link>
+              <Link to="/PANTS">PANTS</Link>
               <ChevronRight size={20} strokeWidth={1.5} />
             </div>
             <div className="py-3 flex justify-between items-center border-b border-gray-300">
-              <Link to="/men">MEN</Link>
+              <Link to="/SHIRTS">SHIRTS</Link>
               <ChevronRight size={20} strokeWidth={1.5} />
             </div>
             <div className="py-3 flex justify-between items-center border-b border-gray-300">
@@ -118,11 +118,11 @@ const Navbar = ({ onLoginClick }) => {
               <ChevronRight size={20} strokeWidth={1.5} />
             </div>
             <div className="py-3 flex justify-between items-center border-b border-gray-300">
-              <Link to="/accessories">ACCESSORIES</Link>
+              <Link to="/SUITS">SUITS</Link>
               <ChevronRight size={20} strokeWidth={1.5} />
             </div>
             <div className="py-3 flex justify-between items-center border-b border-gray-300">
-              <Link to="/sale">SALE</Link>
+              <Link to="/TRACKS">TRACKS</Link>
               <ChevronRight size={20} strokeWidth={1.5} />
             </div>
           </div>
