@@ -4,6 +4,7 @@ import dotenv from "dotenv";
 import { registerUser } from "./controllers/userController.js";
 import userRouter from "./routes/userRoutes.js";
 import cors from "cors";
+import productRouter from "./routes/productRoutes.js";
 
 const app = express();
 
@@ -18,6 +19,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/api/user", userRouter);
+app.use("/api/product", productRouter);
 
 app.listen(3000, () => {
   console.log("Server is running");

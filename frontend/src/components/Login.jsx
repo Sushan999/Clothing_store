@@ -20,16 +20,17 @@ const Login = ({ onclose }) => {
       );
 
       localStorage.setItem("token", data.token);
-      localStorage.setItem("user", JSON.stringify(data.user));
+      // localStorage.setItem("user", JSON.stringify(data.user));
 
       alert(data.message || "Successfully logged");
+      onclose();
     } catch (error) {
       alert(error.response?.data?.message || error.message);
     }
   };
 
   return (
-    <div className="absolute w-full h-screen sm:w-[400px] top-0 right-0   ">
+    <div className="absolute w-full h-screen sm:w-[400px] top-0 right-0 shadow-md  ">
       <form
         action={handleSubmit}
         className="w-full px-4 md:px-8 py-6 bg-white h-full "

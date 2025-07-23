@@ -10,6 +10,9 @@ import Prac from "./components/Prac";
 import Register from "./Pages/Register";
 import Cart from "./Pages/Cart";
 import Profile from "./Pages/Profile";
+import Products from "./Pages/Products";
+import ProductDetail from "./Pages/ProductDetail";
+import Khaiju from "./Pages/Khaiju";
 
 const App = () => {
   const [showLogin, setShowLogin] = useState(false);
@@ -20,7 +23,6 @@ const App = () => {
       {showLogin && <Login onclose={() => setShowLogin(false)} />}
 
       <Routes>
-        {/* Home page */}
         <Route
           path="/"
           element={
@@ -28,7 +30,6 @@ const App = () => {
               <Hero />
               <FeaturedSection />
               <FeaturedSection2 />
-              <Prac />
             </>
           }
         />
@@ -37,6 +38,9 @@ const App = () => {
         <Route path="/register" element={<Register />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="category/:category" element={<Products />} />
+        <Route path="/product/:id" element={<ProductDetail />} />
+        <Route path="/khaiju" element={<Khaiju />} />
       </Routes>
     </>
   );
