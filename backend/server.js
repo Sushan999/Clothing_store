@@ -5,6 +5,7 @@ import { registerUser } from "./controllers/userController.js";
 import userRouter from "./routes/userRoutes.js";
 import cors from "cors";
 import productRouter from "./routes/productRoutes.js";
+import cartRouter from "./routes/cartRoutes.js";
 
 const app = express();
 
@@ -20,6 +21,7 @@ app.get("/", (req, res) => {
 
 app.use("/api/user", userRouter);
 app.use("/api/product", productRouter);
+app.use("/api/user", cartRouter);
 
 app.listen(3000, () => {
   console.log("Server is running");
